@@ -1,8 +1,29 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Lab#9  or  Lab#10");
-//  За бажанням студента для задач можна створювати консольний проект або WinForm
-// Бажано для задач лаб. робіт створити окремі класи
-// Виконання  виконати в стилі багатозаданості :
-//   Lab9T2  lab9task2 = new Lab9T2; lab9task2.Run();
-// При бажанні можна створити багатозадачний режим виконання задач.
+﻿using System;
+using Lab9_10CharpT.Task1;
+using Lab9_10CharpT.task2;
+namespace Lab9_10CharpT
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int choice = int.Parse(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    
+                    break;
+                case 2:
+                    Bull bull = new Bull();
+                    Bear bear = new Bear();
+                    Market market = new Market();
 
+                    bull.WantToBuy += market.OnBuy;
+                    bear.WantToSell += market.OnSell;
+                    bull.Buy();
+                    bear.Sell();
+                    break;
+            }
+        }
+    }
+}
