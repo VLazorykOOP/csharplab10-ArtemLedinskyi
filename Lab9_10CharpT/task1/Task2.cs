@@ -1,10 +1,12 @@
 ﻿using System;
 
-namespace Lab9_10CharpT.Task1
+namespace Lab9_10CharpT.task1
 {
     internal class Task2
     {
-        public string Task(int num)
+        public string Result { get; private set; }
+
+        public void Task(int num)
         {
             try
             {
@@ -17,12 +19,12 @@ namespace Lab9_10CharpT.Task1
                     $"Сума цифр числа {num} кратна 3." :
                     $"Сума цифр числа {num} не кратна 3.";
 
-                return result;
+                Result = result;
             }
             catch (ArgumentException e)
             {
                 Console.WriteLine("ArgumentException: " + e.Message);
-                throw; 
+                throw;
             }
         }
 

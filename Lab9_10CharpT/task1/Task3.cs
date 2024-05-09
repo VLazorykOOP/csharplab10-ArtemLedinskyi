@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab9_10CharpT.Task1
+namespace Lab9_10CharpT.task1
 {
     internal class Task3
     {

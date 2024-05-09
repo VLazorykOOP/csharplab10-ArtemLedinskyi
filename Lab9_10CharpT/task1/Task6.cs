@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Lab9_10CharpT.Task1
+namespace Lab9_10CharpT.task1
 {
     internal class Task6
     {
-        public double Task(double x, double y)
+        public double Result { get; private set; }
+
+        public void Task(double x, double y)
         {
             try
             {
@@ -17,13 +15,13 @@ namespace Lab9_10CharpT.Task1
                     throw new Task6Exception("Division by zero error.");
                 }
 
-                return ((x * Math.Pow(y, 2) + Math.Pow(x, 2)) / (x * y + 1)) * (x - y);
+                Result = ((x * Math.Pow(y, 2) + Math.Pow(x, 2)) / (x * y + 1)) * (x - y);
             }
             catch (Task6Exception e)
             {
                 Console.WriteLine("Task6Exception: " + e.Message);
-                throw; 
+                throw;
             }
         }
     }
-    }
+}

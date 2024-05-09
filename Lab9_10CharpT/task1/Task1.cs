@@ -1,10 +1,12 @@
 ﻿using System;
 
-namespace Lab9_10CharpT.Task1
+namespace Lab9_10CharpT.task1
 {
-    internal class Task1
+    public class Task1
     {
-        public double Task(int x1, int y1, int x2, int y2, int x3, int y3)
+        public double Result { get; private set; }
+
+        public void Task(int x1, int y1, int x2, int y2, int x3, int y3)
         {
             try
             {
@@ -16,12 +18,13 @@ namespace Lab9_10CharpT.Task1
                 double AB = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
                 double AC = Math.Sqrt(Math.Pow(x3 - x1, 2) + Math.Pow(y3 - y1, 2));
                 double BC = Math.Sqrt(Math.Pow(x3 - x2, 2) + Math.Pow(y3 - y2, 2));
-                return AB + AC + BC;
+
+                Result = AB + AC + BC;
             }
             catch (ArgumentException e)
             {
                 Console.WriteLine("ArgumentException: " + e.Message);
-                throw; 
+                throw;
             }
         }
     }
